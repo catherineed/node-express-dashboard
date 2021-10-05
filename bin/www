@@ -9,7 +9,9 @@ const debug = require("debug")("log-dashboard:server");
 const http = require("http");
 const WebSocket = require("ws");
 const wss = WebSocket.Server;
-wss.on("options", server);
+wss.on("connection", ws);
+ws.on("message", message);
+ws.send("Hello from server", message);
 
 /**
  * Get port from environment and store in Express.
