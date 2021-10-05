@@ -7,6 +7,9 @@
 const app = require("../app");
 const debug = require("debug")("log-dashboard:server");
 const http = require("http");
+const WebSocket = require("ws");
+const wss = WebSocket.Server;
+wss.on("options", server);
 
 /**
  * Get port from environment and store in Express.
